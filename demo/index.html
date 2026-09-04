@@ -303,6 +303,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .agree-mark{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--g3);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .agree-box.on .agree-mark{background:var(--green);border-color:var(--green)}
 .tenant-bar{background:var(--navy2);border-bottom:1px solid rgba(255,255,255,0.06);padding:12px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* ── DEMO ACCESS GATE ── */
+.demo-gate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(5,10,18,.96);backdrop-filter:blur(10px)}
+.demo-gate-card{width:min(100%,420px);padding:32px;background:var(--navy2);border:1px solid rgba(249,115,22,.35);border-radius:var(--r3);box-shadow:0 24px 80px rgba(0,0,0,.45);text-align:center}
+.demo-gate-mark{width:48px;height:48px;margin:0 auto 18px;background:var(--orange);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.demo-gate h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;margin-bottom:8px}
+.demo-gate p{color:var(--g2);font-size:13px;margin-bottom:22px}
+.demo-gate form{display:flex;gap:8px}
+.demo-gate input{min-width:0;flex:1;padding:11px 12px;border:1px solid rgba(255,255,255,.14);border-radius:7px;background:var(--navy3);color:var(--white);font:inherit;outline:none}
+.demo-gate input:focus{border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-dim)}
+.demo-gate button{padding:11px 16px;border:0;border-radius:7px;background:var(--orange);color:white;font:600 13px 'DM Sans',sans-serif;cursor:pointer}
+.demo-gate button:hover{background:var(--orange2)}
+.demo-gate-error{min-height:20px;margin-top:12px;color:#fca5a5;font-size:12px}
+.demo-gate[hidden]{display:none}
+@media (max-width:480px){.demo-gate form{flex-direction:column}.demo-gate button{width:100%}}
+
 @media (max-width:900px){.tenant-bar{padding:10px 4%}.tenant-bar .small.muted{display:none}}
 
 /* responsive */
@@ -318,6 +334,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 </style>
 </head>
 <body>
+<div class="demo-gate" id="demoGate" role="dialog" aria-modal="true" aria-labelledby="demoGateTitle">
+  <div class="demo-gate-card">
+    <div class="demo-gate-mark" aria-hidden="true"><svg class="ico" width="26" height="26"><use href="#i-shield"/></svg></div>
+    <h1 id="demoGateTitle">Private demo</h1>
+    <p>Enter the access password to continue to Carry Ops.</p>
+    <form id="demoGateForm">
+      <label class="sr-only" for="demoGatePassword">Password</label>
+      <input id="demoGatePassword" type="password" autocomplete="current-password" placeholder="Password" required autofocus>
+      <button type="submit">Unlock demo</button>
+    </form>
+    <div class="demo-gate-error" id="demoGateError" role="alert" aria-live="polite"></div>
+  </div>
+</div>
 
 <!-- ─────── SVG ICON LIBRARY ─────── -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -4160,6 +4189,32 @@ function confirmDelivery(tid){
    INIT
    ═══════════════════════════════════════════════════════════════════════ */
 // no auto-init; user clicks role to enter
+</script>
+<script>
+(() => {
+  const gate = document.getElementById('demoGate');
+  const form = document.getElementById('demoGateForm');
+  const input = document.getElementById('demoGatePassword');
+  const error = document.getElementById('demoGateError');
+  const accessKey = 'carry-ops-demo-unlocked';
+
+  function unlock() {
+    gate.hidden = true;
+    sessionStorage.setItem(accessKey, '1');
+  }
+
+  if (sessionStorage.getItem(accessKey) === '1') unlock();
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (input.value === 'admin123') {
+      error.textContent = '';
+      unlock();
+    } else {
+      error.textContent = 'Incorrect password. Try again.';
+      input.select();
+    }
+  });
+})();
 </script>
 </body>
 </html>

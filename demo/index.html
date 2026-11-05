@@ -413,7 +413,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
       <div class="role-card-icon"><svg class="ico" width="22" height="22" style="stroke:var(--orange)"><use href="#i-building"/></svg></div>
       <div class="role-card-name">Shipper</div>
       <div class="role-card-desc">Post loads, invite carriers, run the bid board, award based on safety + capability + price + consistency.</div>
-      <div class="role-card-as">Login as: Test Shipper · Acme Materials</div>
+      <div class="role-card-as">Login as: Demo Shipper · Chemical Shipper Demo</div>
     </div>
     <div class="role-card" onclick="enterAs('carrier')">
       <div class="role-card-icon"><svg class="ico" width="22" height="22" style="stroke:var(--orange)"><use href="#i-truck"/></svg></div>
@@ -551,11 +551,11 @@ const SEED = {
     }
   },
   carriers: [
-    {id:'c1', fleetManagement:'platform', name:'Ironwood Bulk Transport LLC', mc:'900101', dot:'9900101', city:'Houston, TX', status:'Active', primary:'Ray Alcott', email:'ralcott@ironwoodbulk.example', phone:'(713) 555-0142', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:14, drivers:18, onTime:98, disputes:0, completion:99, safetyScore:98, agreement:true, contacts:1, fleet:14, trailers:8, driversComplete:true, portalAccess:true, joined:'2025-08-12', verified:true},
-    {id:'c2', fleetManagement:'self', name:'Delta Belly Dumps LLC', mc:'900102', dot:'9900102', city:'Beaumont, TX', status:'Active', primary:'Nadine Okonjo', email:'nokonjo@deltabelly.example', phone:'(409) 555-0188', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:9, drivers:12, onTime:94, disputes:1, completion:96, safetyScore:91, agreement:true, contacts:1, fleet:9, trailers:5, driversComplete:true, portalAccess:true, joined:'2025-09-04', verified:true},
-    {id:'c3', fleetManagement:'platform', name:'Gulfline Aggregate Co.', mc:'900103', dot:'9900103', city:'Galveston, TX', status:'Active', primary:'Trent Mabry', email:'tmabry@gulfline.example', phone:'(281) 555-0220', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:11, drivers:14, onTime:91, disputes:2, completion:93, safetyScore:87, agreement:true, contacts:1, fleet:11, trailers:6, driversComplete:true, portalAccess:true, joined:'2025-09-22', verified:true},
-    {id:'c4', fleetManagement:'self', name:'Frontera Carriers LLC', mc:'900104', dot:'9900104', city:'McAllen, TX', status:'Active', primary:'Omar Saldana', email:'osaldana@fronteracarriers.example', phone:'(956) 555-0177', insurance:'Active', w9:true, dotRating:'Conditional', trucks:6, drivers:8, onTime:88, disputes:3, completion:90, safetyScore:78, agreement:true, contacts:1, fleet:6, trailers:3, driversComplete:true, portalAccess:true, joined:'2025-10-14', verified:true},
-    {id:'c5', fleetManagement:'self', name:'Kestrel Freight Co.', mc:'900105', dot:'9900105', city:'Baytown, TX', status:'Active', primary:'Ingrid Halvorsen', email:'ihalvorsen@kestrelfreight.example', phone:'—', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:5, drivers:6, onTime:92, disputes:1, completion:95, safetyScore:88, agreement:true, contacts:1, fleet:5, trailers:2, driversComplete:true, portalAccess:true, joined:'2025-11-02', verified:true},
+    {id:'c1', fleetManagement:'platform', name:'Ironwood Bulk Transport LLC', mc:'900101', dot:'9900101', city:'Houston, TX', status:'Active', primary:'Ray Alcott', email:'ralcott@ironwoodbulk.example', phone:'(713) 555-0142', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:14, drivers:18, onTime:98, disputes:0, completion:99, safetyScore:98, agreement:true, contacts:1, fleet:14, trailers:8, driversComplete:true, portalAccess:true, joined:'2025-08-12', equipmentTypes:['Belly Dump','End Dump','Tanker'], chemicalCapable:true, hazmatEndorsed:true, verified:true},
+    {id:'c2', fleetManagement:'self', name:'Delta Belly Dumps LLC', mc:'900102', dot:'9900102', city:'Beaumont, TX', status:'Active', primary:'Nadine Okonjo', email:'nokonjo@deltabelly.example', phone:'(409) 555-0188', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:9, drivers:12, onTime:94, disputes:1, completion:96, safetyScore:91, agreement:true, contacts:1, fleet:9, trailers:5, driversComplete:true, portalAccess:true, joined:'2025-09-04', equipmentTypes:['Belly Dump','End Dump'], chemicalCapable:false, hazmatEndorsed:false, verified:true},
+    {id:'c3', fleetManagement:'platform', name:'Gulfline Aggregate Co.', mc:'900103', dot:'9900103', city:'Galveston, TX', status:'Active', primary:'Trent Mabry', email:'tmabry@gulfline.example', phone:'(281) 555-0220', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:11, drivers:14, onTime:91, disputes:2, completion:93, safetyScore:87, agreement:true, contacts:1, fleet:11, trailers:6, driversComplete:true, portalAccess:true, joined:'2025-09-22', equipmentTypes:['Belly Dump','Tanker'], chemicalCapable:true, hazmatEndorsed:true, verified:true},
+    {id:'c4', fleetManagement:'self', name:'Frontera Carriers LLC', mc:'900104', dot:'9900104', city:'McAllen, TX', status:'Active', primary:'Omar Saldana', email:'osaldana@fronteracarriers.example', phone:'(956) 555-0177', insurance:'Active', w9:true, dotRating:'Conditional', trucks:6, drivers:8, onTime:88, disputes:3, completion:90, safetyScore:78, agreement:true, contacts:1, fleet:6, trailers:3, driversComplete:true, portalAccess:true, joined:'2025-10-14', equipmentTypes:['Flatbed','End Dump'], chemicalCapable:false, hazmatEndorsed:false, verified:true},
+    {id:'c5', fleetManagement:'self', name:'Kestrel Freight Co.', mc:'900105', dot:'9900105', city:'Baytown, TX', status:'Active', primary:'Ingrid Halvorsen', email:'ihalvorsen@kestrelfreight.example', phone:'—', insurance:'Active', w9:true, dotRating:'Satisfactory', trucks:5, drivers:6, onTime:92, disputes:1, completion:95, safetyScore:88, agreement:true, contacts:1, fleet:5, trailers:2, driversComplete:true, portalAccess:true, joined:'2025-11-02', equipmentTypes:['Tanker','Pneumatic'], chemicalCapable:true, hazmatEndorsed:true, verified:true},
     {id:'c6', fleetManagement:'platform', name:'Northfield Legacy Trucking LLC', mc:'900106', dot:'9900106', city:'Houston, TX', status:'Onboarding Submitted', primary:'Curtis Vance', email:'cvance@northfieldlegacy.example', phone:'(832) 555-0904', insurance:'Active', w9:true, dotRating:'Pending', trucks:3, drivers:4, onTime:0, disputes:0, completion:0, safetyScore:0, agreement:true, contacts:1, fleet:3, trailers:1, driversComplete:true, portalAccess:false, joined:'2026-04-18', verified:false},
     {id:'c7', fleetManagement:'self', name:'Verano Transportation LLC', mc:'—', dot:'—', city:'Dallas, TX', status:'Onboarding Invited', primary:'—', email:'dispatch@veranotransport.example', phone:'—', insurance:'Pending', w9:false, dotRating:'Pending', trucks:0, drivers:0, onTime:0, disputes:0, completion:0, safetyScore:0, agreement:false, contacts:0, fleet:0, trailers:0, driversComplete:false, portalAccess:false, joined:'2026-04-22', verified:false},
     {id:'c8', fleetManagement:'self', name:'Willow Creek Farms', mc:'—', dot:'—', city:'Conroe, TX', status:'Onboarding In Progress', primary:'Dean Stroud', email:'dstroud@willowcreekfarms.example', phone:'—', insurance:'Active', w9:false, dotRating:'Pending', trucks:2, drivers:0, onTime:0, disputes:0, completion:0, safetyScore:0, agreement:true, contacts:1, fleet:2, trailers:0, driversComplete:false, portalAccess:false, joined:'2026-04-19', verified:false},
@@ -574,6 +574,12 @@ const SEED = {
     ]},
     {id:'LD-58B4A7C2', origin:'Ridgeline Materials Pit, Houston, TX', dest:'Conroe Park North Site, Conroe, TX', distance:'42 mi', equipment:'Belly Dump', commodity:'Crushed limestone', pickup:'2026-04-25', delivery:'2026-04-25', weight:'24-26 tons / load', loadCount:'Active — running today', target:680, hazmat:false, notes:'Active hauling — see scalehouse for ticket activation.', status:'In Progress', mode:'Awarded', awardedTo:'c1', deadline:'', invited:['c1','c2','c3','c4'], bids:[
       {carrierId:'c1', amount:680, perTon:'$11.30 / ton', submittedAt:'2026-04-23 09:12', notes:'', winner:true}
+    ]},
+    /* Illustrative demo fixture aligned with Ben's call; load details, company, prices, bids, and qualifications below are sample data, not transcript facts or verified carrier records. */
+    {id:'LD-CHEM-2401', illustrative:true, projectName:'Chemical haul · Industrial solvents', shipper:'Chemical Shipper Demo', origin:'Houston, TX', dest:'Dallas, TX', distance:'Not estimated in demo', equipment:'Tanker', commodity:'Industrial solvents', pickup:'2026-05-08', delivery:'2026-05-17', weight:'24 tons / load', loadCount:'6 loads / day × 10 days', target:0, chemical:true, hazmat:true, notes:'Demo scenario only. Confirm chemical compatibility, permits, and all applicable safety requirements before dispatch.', status:'Open', mode:'Open Bid', deadline:'2026-05-07 18:00', invited:['c1','c3','c5'], bids:[
+      {carrierId:'c1', amount:1260, perTon:'$52.50 / ton', submittedAt:'2026-05-06 09:12', notes:'Dedicated tanker capacity available.'},
+      {carrierId:'c3', amount:1300, perTon:'$54.17 / ton', submittedAt:'2026-05-06 10:25', notes:'Can cover the full 10-day window.'},
+      {carrierId:'c5', amount:1210, perTon:'$50.42 / ton', submittedAt:'2026-05-06 11:03', notes:'Subject to final route and product review.'}
     ]}
   ],
   drivers: [
@@ -1046,7 +1052,7 @@ let STATE = {
 const ROLE_CONFIG = {
   shipper: {
     portal: 'Shipper Portal',
-    user: {name:'Test Shipper', sub:'Acme Materials'},
+    user: {name:'Demo Shipper', sub:'Chemical Shipper Demo'},
     tabs: [
       {id:'loadboard', name:'Load board', icon:'i-clipboard'},
       {id:'post', name:'Post load', icon:'i-plus'},
@@ -1411,8 +1417,9 @@ function renderLoadDetail(id){
   <div class="app-body">
     <div class="row mb-16" style="gap:14px">
       <button class="btn btn-ghost btn-sm" onclick="${isShipper?'backFromLoad()':'setTab(\'invitations\')'}">${ico('arrow-left',14)}Back</button>
-      <div class="serif" style="font-size:28px;font-weight:400">${l.id}</div>
+      <div><div class="serif" style="font-size:28px;font-weight:400">${l.projectName||l.id}</div><div class="tiny muted mono">${l.id}${l.shipper?' · '+l.shipper:''}</div></div>
       <span class="pill ${l.status==='Open'?'blue':l.status==='In Progress'?'amber pill-live':l.status==='Cancelled'?'red':'green'}"><span class="dot"></span>${l.status}</span>
+      ${l.illustrative?'<span class="pill gray">Illustrative demo data</span>':''}
       ${l.mode==='Set Rate'?`<span class="pill orange">Set rate · ${money(l.setRate)}</span>`:''}
     </div>
 
@@ -1424,7 +1431,7 @@ function renderLoadDetail(id){
           <div class="detail-item"><div class="label">Pickup</div><div class="value">${l.pickup}</div></div>
           <div class="detail-item"><div class="label">Commodity</div><div class="value">${l.commodity}</div></div>
           <div class="detail-item"><div class="label">${isShipper?'Target / load':'Set rate'}</div><div class="value">${l.target?money(l.target):'—'}</div></div>
-          <div class="detail-item"><div class="label">Hazmat / temp</div><div class="value">${l.hazmat?'Hazmat':'—'}</div></div></div>
+          <div class="detail-item"><div class="label">Cargo requirements</div><div class="value">${l.chemical?'Chemical-compatible carrier · ':''}${l.hazmat?'Hazmat-qualified':'Non-hazmat'}</div></div></div>
           <div><div class="detail-item"><div class="label">Destination</div><div class="value">${l.dest.split(',')[0]}</div><div class="small muted">${l.dest.split(',').slice(1).join(',').trim()}</div></div>
           <div class="detail-item"><div class="label">Equipment</div><div class="value">${l.equipment}</div></div>
           <div class="detail-item"><div class="label">Delivery</div><div class="value">${l.delivery}</div></div>
@@ -1548,79 +1555,124 @@ function awardLoad(loadId, carrierId){
 function bidOnLoad(id){STATE.context.bidOnLoad=id;renderPage();window.scrollTo(0,0)}
 
 function renderShipperPostLoad(){
+  const initialEligible = eligibleCarriersForLoad({equipment:'Tanker',hazmat:true,chemical:true});
   return `
   <div class="app-body narrow">
     <div class="page-head">
-      <div><h1>Post a Load</h1><p>Carriers will only be invited if they're verified <em>and</em> match the equipment, lane, and capacity you specify.</p></div>
+      <div><h1>Post a Load</h1><p>Create a shipper load, choose an open bid or set rate, and invite only active, verified carriers that match equipment, chemical compatibility, and hazmat requirements.</p></div>
     </div>
 
     <div class="card">
       <div class="f-row-2">
         <div class="f-grp"><label class="f-lbl">Origin address *</label><input class="f-in" id="postOrigin" placeholder="Pickup address" value="1500 Industrial Blvd, Houston, TX"></div>
-        <div class="f-grp"><label class="f-lbl">Destination *</label><input class="f-in" id="postDest" placeholder="Delivery address" value="2200 Conroe Park, Conroe, TX"></div>
-      </div>
-
-      <div class="f-row-3">
-        <div class="f-grp"><label class="f-lbl">Equipment *</label>
-          <select class="f-sel" id="postEquip"><option>Belly Dump</option><option>End Dump</option><option>Flatbed</option><option>Side Dump</option><option>Pneumatic</option></select>
-        </div>
-        <div class="f-grp"><label class="f-lbl">Commodity *</label><input class="f-in" id="postCommodity" value="Crushed limestone"></div>
-        <div class="f-grp"><label class="f-lbl">Hazmat / Temp</label><select class="f-sel"><option>None</option><option>Hazmat</option><option>Temp-controlled</option></select></div>
+        <div class="f-grp"><label class="f-lbl">Destination *</label><input class="f-in" id="postDest" placeholder="Delivery address" value="2200 Commerce St, Dallas, TX"></div>
       </div>
 
       <div class="f-row-4">
-        <div class="f-grp"><label class="f-lbl">Pickup date</label><input class="f-in" type="date" value="2026-04-30"></div>
-        <div class="f-grp"><label class="f-lbl">Delivery date</label><input class="f-in" type="date" value="2026-05-14"></div>
-        <div class="f-grp"><label class="f-lbl">Tonnage / load</label><input class="f-in" value="26"></div>
-        <div class="f-grp"><label class="f-lbl">Loads / day</label><input class="f-in" value="8"></div>
+        <div class="f-grp"><label class="f-lbl">Equipment *</label>
+          <select class="f-sel" id="postEquip" onchange="refreshBidCarrierChoices()"><option>Belly Dump</option><option>End Dump</option><option>Flatbed</option><option>Side Dump</option><option>Pneumatic</option><option selected>Tanker</option></select>
+        </div>
+        <div class="f-grp"><label class="f-lbl">Commodity *</label><input class="f-in" id="postCommodity" value="Industrial solvents"></div>
+        <div class="f-grp"><label class="f-lbl">Chemical cargo</label><label class="row gap-8" style="height:40px"><input id="postChemical" type="checkbox" checked onchange="refreshBidCarrierChoices()"> Requires chemical-compatible carrier</label></div>
+        <div class="f-grp"><label class="f-lbl">Hazardous material</label><label class="row gap-8" style="height:40px"><input id="postHazmat" type="checkbox" checked onchange="refreshBidCarrierChoices()"> Requires hazmat-qualified carriers</label></div>
+      </div>
+
+      <div class="f-row-4">
+        <div class="f-grp"><label class="f-lbl">Pickup date</label><input class="f-in" id="postPickup" type="date" value="${dateOnly(new Date(DEMO_TODAY.getTime()+86400000*3))}"></div>
+        <div class="f-grp"><label class="f-lbl">Delivery date</label><input class="f-in" id="postDelivery" type="date" value="${dateOnly(new Date(DEMO_TODAY.getTime()+86400000*4))}"></div>
+        <div class="f-grp"><label class="f-lbl">Tons / load</label><input class="f-in" id="postTons" type="number" min="1" value="24"></div>
+        <div class="f-grp"><label class="f-lbl">Loads / day</label><input class="f-in" id="postLoads" type="number" min="1" value="6"></div>
       </div>
 
       <div class="f-grp"><label class="f-lbl">Mode *</label>
         <div class="row gap-8">
-          <label class="row gap-8" style="background:var(--orange-dim);border:1px solid var(--orange-border);padding:10px 14px;border-radius:7px;cursor:pointer;flex:1"><input type="radio" name="mode" checked> <strong>Open Bid</strong> — invite, see bids, award</label>
-          <label class="row gap-8" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:7px;cursor:pointer;flex:1"><input type="radio" name="mode"> <strong>Set Rate</strong> — pre-set the rate, carriers accept or decline</label>
+          <label class="row gap-8" style="background:var(--orange-dim);border:1px solid var(--orange-border);padding:10px 14px;border-radius:7px;cursor:pointer;flex:1"><input id="postModeOpen" type="radio" name="postMode" value="Open Bid" checked> <strong>Open Bid</strong> — carriers submit private offers</label>
+          <label class="row gap-8" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:7px;cursor:pointer;flex:1"><input id="postModeSet" type="radio" name="postMode" value="Set Rate"> <strong>Set Rate</strong> — carriers accept or decline your rate</label>
         </div>
       </div>
 
-      <div class="f-grp"><label class="f-lbl">Target rate / load</label><input class="f-in" id="postRate" value="920"></div>
+      <div class="f-row-2">
+        <div class="f-grp"><label class="f-lbl">Rate / load <span class="muted">(required for set rate)</span></label><input class="f-in" id="postRate" type="number" min="1" step="0.01" value="1260"></div>
+        <div class="f-grp"><label class="f-lbl">Bid deadline</label><input class="f-in" id="postDeadline" type="datetime-local" value="${dateOnly(new Date(DEMO_TODAY.getTime()+86400000*2))}T18:00"></div>
+      </div>
 
-      <div class="f-grp"><label class="f-lbl">Notes (visible to invited carriers)</label><textarea class="f-ta" id="postNotes">PPE required onsite. Tarps required. Driver assist on load.</textarea></div>
+      <div class="f-grp"><label class="f-lbl">Notes (visible to invited carriers)</label><textarea class="f-ta" id="postNotes">Demo chemical shipment. Confirm product compatibility, permits, and safety requirements before dispatch.</textarea></div>
 
       <div class="card-tight" style="background:rgba(59,130,246,0.04);border:1px solid var(--blue-border);margin-bottom:14px">
-        <div class="row gap-8">
-          ${ico('shield',14,'style="stroke:var(--blue)"')}
-          <div class="small"><strong>Auto-matched carriers:</strong> based on Belly Dump + this lane + capacity, the platform will invite <strong style="color:var(--blue)">4 verified carriers</strong> from your network. You can adjust the list before sending.</div>
-        </div>
+        <div class="row gap-8 mb-8">${ico('shield',14,'style="stroke:var(--blue)"')}<div class="small"><strong>Eligible carrier matching:</strong> active status, completed verification, required equipment, and hazmat qualification when selected. This demo uses sample qualification data; verify real permits and chemical compatibility before dispatch.</div></div>
+        <div class="small muted mb-8">These are load-specific invitations to onboarded carriers. Platform onboarding invitations are handled separately by the admin.</div>
+        <div id="eligibleCarrierChoices">${renderEligibleCarrierChoices(initialEligible)}</div>
       </div>
 
       <div class="row mt-16 gap-8" style="justify-content:flex-end">
         <button class="btn btn-ghost" onclick="setTab('loadboard')">Cancel</button>
-        <button class="btn btn-primary" onclick="submitNewLoad()">${ico('mail',14)}Post & send invitations</button>
+        <button class="btn btn-primary" onclick="submitNewLoad()">${ico('mail',14)}Post & send bid invitations</button>
       </div>
     </div>
   </div>`;
 }
 
+function eligibleCarriersForLoad(criteria, carriers=SEED.carriers){
+  return carriers.filter(c=>c.status==='Active'&&c.verified&&c.insurance==='Active'&&
+    (!criteria.equipment||(c.equipmentTypes||[]).includes(criteria.equipment))&&
+    (!criteria.chemical||c.chemicalCapable===true)&&
+    (!criteria.hazmat||c.hazmatEndorsed===true));
+}
+
+function renderEligibleCarrierChoices(carriers, selectedIds=carriers.map(c=>c.id)){
+  if(!carriers.length)return '<div class="small" style="color:var(--amber)">No carriers match these requirements. Change equipment, chemical, or hazmat requirements before posting.</div>';
+  return `<div class="small muted mb-8" id="eligibleCarrierCount">${carriers.length} eligible carrier${carriers.length===1?'':'s'} · adjust the invitation list before posting</div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px">${carriers.map(c=>`<label class="row gap-8" style="align-items:flex-start;padding:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:7px"><input type="checkbox" name="inviteCarrier" value="${c.id}" ${selectedIds.includes(c.id)?'checked':''}><span><strong>${c.name}</strong><br><span class="tiny muted">${c.city} · Safety ${c.safetyScore} · ${(c.equipmentTypes||[]).join(', ')}${c.hazmatEndorsed?' · Hazmat-qualified':''}</span></span></label>`).join('')}</div>`;
+}
+
+function refreshBidCarrierChoices(){
+  const equipment=$('#postEquip')?.value||'';
+  const hazmat=!!$('#postHazmat')?.checked;
+  const chemical=!!$('#postChemical')?.checked;
+  const selected=[...document.querySelectorAll('input[name="inviteCarrier"]:checked')].map(el=>el.value);
+  const eligible=eligibleCarriersForLoad({equipment,hazmat,chemical});
+  $('#eligibleCarrierChoices').innerHTML=renderEligibleCarrierChoices(eligible,selected);
+}
+
 function submitNewLoad(){
+  const origin=$('#postOrigin').value.trim(), dest=$('#postDest').value.trim();
+  const commodity=$('#postCommodity').value.trim(), equipment=$('#postEquip').value;
+  const chemical=$('#postChemical').checked;
+  const hazmat=$('#postHazmat').checked, mode=document.querySelector('input[name="postMode"]:checked')?.value||'Open Bid';
+  const pickup=$('#postPickup').value, delivery=$('#postDelivery').value;
+  const tons=Number($('#postTons').value), loadsPerDay=Number($('#postLoads').value);
+  const rate=Number($('#postRate').value), deadline=$('#postDeadline').value;
+  const invited=[...document.querySelectorAll('input[name="inviteCarrier"]:checked')].map(el=>el.value);
+  if(!origin||!dest||!commodity||!pickup||!delivery){showToast('Complete the required load details');return}
+  if(new Date(pickup+'T00:00:00')<new Date(dateOnly(DEMO_TODAY)+'T00:00:00')){showToast('Pickup date cannot be in the past');return}
+  if(new Date(delivery)<new Date(pickup)){showToast('Delivery date must be on or after pickup');return}
+  const durationDays=Math.floor((Date.parse(`${delivery}T00:00:00Z`)-Date.parse(`${pickup}T00:00:00Z`))/86400000)+1;
+  if(!Number.isFinite(tons)||tons<=0||!Number.isFinite(loadsPerDay)||loadsPerDay<=0){showToast('Enter positive tons per load and loads per day');return}
+  if(mode==='Set Rate'&&(!Number.isFinite(rate)||rate<=0)){showToast('Enter a positive set rate');return}
+  if(!deadline||new Date(deadline)<=new Date()){showToast('Set a bid deadline in the future');return}
+  if(!invited.length){showToast('Select at least one eligible carrier');return}
+  const eligibleIds=new Set(eligibleCarriersForLoad({equipment,hazmat,chemical}).map(c=>c.id));
+  if(invited.some(id=>!eligibleIds.has(id))){showToast('Invitation list includes a carrier that does not meet the requirements');return}
   const newId = 'LD-'+Math.random().toString(16).slice(2,10).toUpperCase();
   const newLoad = {
     id: newId,
-    origin: $('#postOrigin').value,
-    dest: $('#postDest').value,
-    distance: '~50 mi',
-    equipment: $('#postEquip').value,
-    commodity: $('#postCommodity').value,
-    pickup: '2026-04-30',
-    delivery: '2026-05-14',
-    weight: '26 tons / load',
-    loadCount: '8 loads / day × 14 days',
-    target: parseInt($('#postRate').value)||0,
-    hazmat: false,
+    shipper: ROLE_CONFIG.shipper.user.sub,
+    origin, dest,
+    projectName: `${chemical?'Chemical haul · ':''}${commodity}`,
+    distance: 'Not estimated in demo',
+    equipment, commodity,
+    pickup, delivery,
+    weight: `${fmt(tons)} tons / load`,
+    loadCount: `${fmt(loadsPerDay)} loads / day × ${durationDays} days`,
+    totalLoads: loadsPerDay*durationDays,
+    target: rate||0,
+    ...(mode==='Set Rate'?{setRate:rate}:{}),
+    chemical,
+    hazmat,
     notes: $('#postNotes').value,
     status: 'Open',
-    mode: 'Open Bid',
-    deadline: '2026-04-29 18:00',
-    invited: ['c1','c2','c3','c4'],
+    mode,
+    deadline: deadline.replace('T',' '),
+    invited,
     bids: []
   };
   SEED.loads.unshift(newLoad);
@@ -1630,7 +1682,7 @@ function submitNewLoad(){
     if(!SEED.notifications[key])SEED.notifications[key]=[];
     SEED.notifications[key].unshift({id:'n'+Date.now()+cid, type:'invitation', loadId:newId, message:'New invitation: '+newLoad.commodity, time:'just now', read:false});
   });
-  showToast('Load posted. 4 verified carriers invited.');
+  showToast(`Load posted. ${invited.length} eligible carrier${invited.length===1?'':'s'} invited.`);
   setTab('loadboard');
   setTimeout(()=>viewLoad(newId),100);
 }
@@ -2148,8 +2200,8 @@ function renderCarrierBidForm(loadId){
         </div>
       </div>
       <div class="f-row-2">
-        <div class="f-grp"><label class="f-lbl">Your bid · per load</label><input class="f-in" id="bidAmount" placeholder="e.g. 1820" value="1820"></div>
-        <div class="f-grp"><label class="f-lbl">Per ton (auto)</label><input class="f-in" value="$11.20" disabled></div>
+        <div class="f-grp"><label class="f-lbl">Your bid · per load</label><input class="f-in" id="bidAmount" type="number" min="1" step="0.01" placeholder="Enter your offer" oninput="previewBidPerTon('${l.id}')"></div>
+        <div class="f-grp"><label class="f-lbl">Per ton (calculated)</label><input class="f-in" id="bidPerTonPreview" value="Enter bid to calculate" disabled></div>
       </div>
       <div class="f-grp"><label class="f-lbl">Note to shipper (optional)</label><textarea class="f-ta" id="bidNotes" placeholder="Mention availability, dedicated trucks, special handling…"></textarea></div>
       <div class="row mt-16 gap-8" style="justify-content:flex-end"><button class="btn btn-ghost" onclick="cancelBid()">Cancel</button><button class="btn btn-primary" onclick="submitBid('${l.id}')">${ico('gavel',14)}Submit bid</button></div>
@@ -2158,14 +2210,29 @@ function renderCarrierBidForm(loadId){
   </div>`;
 }
 
+function tonsPerLoad(loadRecord){
+  const weights=(String(loadRecord.weight||'').match(/\d+(?:\.\d+)?/g)||[]).map(Number);
+  if(!weights.length)return 0;
+  return weights.length>1?(weights[0]+weights[1])/2:weights[0];
+}
+function perTonPrice(loadRecord, amount){
+  const tons=tonsPerLoad(loadRecord);
+  return tons>0?'$'+(amount/tons).toFixed(2)+' / ton':'—';
+}
+function previewBidPerTon(loadId){
+  const amount=Number($('#bidAmount').value), tons=tonsPerLoad(load(loadId));
+  $('#bidPerTonPreview').value=Number.isFinite(amount)&&amount>0&&tons>0?'$'+(amount/tons).toFixed(2)+' / ton':'Enter bid to calculate';
+}
 function cancelBid(){delete STATE.context.bidOnLoad;renderPage()}
 function submitBid(loadId){
   const l = load(loadId);
   const cid = ROLE_CONFIG.carrier.carrierId;
-  const amount = parseInt($('#bidAmount').value)||0;
+  const amount = parseFloat($('#bidAmount').value);
   const notes = $('#bidNotes').value;
-  if(!amount){showToast('Enter a bid amount');return}
-  l.bids.push({carrierId:cid, amount, perTon:'$'+(amount/26).toFixed(2)+' / ton', submittedAt:new Date().toISOString().slice(0,16).replace('T',' '), notes});
+  if(!l||l.status!=='Open'||!l.invited.includes(cid)){showToast('This load is no longer open to your carrier');return}
+  if(l.bids.some(b=>b.carrierId===cid)){showToast('You already responded to this load invitation');return}
+  if(!Number.isFinite(amount)||amount<=0){showToast('Enter a positive bid amount');return}
+  l.bids.push({carrierId:cid, amount, perTon:perTonPrice(l,amount), submittedAt:new Date().toISOString().slice(0,16).replace('T',' '), notes});
   showToast('Bid submitted. The shipper has been notified.');
   delete STATE.context.bidOnLoad;
   STATE.context.viewLoad=loadId;
@@ -2174,7 +2241,9 @@ function submitBid(loadId){
 function acceptSetRate(loadId){
   const l = load(loadId);
   const cid = ROLE_CONFIG.carrier.carrierId;
-  l.bids.push({carrierId:cid, amount:l.setRate, perTon:'$'+(l.setRate/26).toFixed(2)+' / ton', submittedAt:new Date().toISOString().slice(0,16).replace('T',' '), notes:'Accepted set rate.', accepted:true});
+  if(!l||l.status!=='Open'||l.mode!=='Set Rate'||!l.invited.includes(cid)){showToast('This set-rate offer is no longer available to your carrier');return}
+  if(l.bids.some(b=>b.carrierId===cid)){showToast('You already responded to this load invitation');return}
+  l.bids.push({carrierId:cid, amount:l.setRate, perTon:perTonPrice(l,l.setRate), submittedAt:new Date().toISOString().slice(0,16).replace('T',' '), notes:'Accepted set rate.', accepted:true});
   showToast('Set rate accepted. Shipper has been notified.');
   delete STATE.context.bidOnLoad;
   STATE.context.viewLoad=loadId;
